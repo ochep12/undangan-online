@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Georgia, serif;
+        background: #f8f4ed;
+        color: #514638;
+        text-align: center;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+          url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1200")
+            center/cover;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin: 20px 0;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      button {
+        background: #9b7956;
+        color: white;
+        border: none;
+        padding: 13px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 25px;
+      }
+
+      button:hover {
+        background: #6f5135;
+      }
+
+      h2 {
+        color: #96734e;
+        margin-bottom: 25px;
+        font-size: 30px;
+      }
+
+      .names {
+        font-size: 32px;
+        line-height: 1.8;
+        color: #96734e;
+      }
+
+      .card {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .countdown div {
+        background: #96734e;
+        color: white;
+        padding: 18px;
+        min-width: 75px;
+        border-radius: 10px;
+      }
+
+      .countdown strong {
+        display: block;
+        font-size: 25px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        max-width: 650px;
+        margin: auto;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: inherit;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      footer {
+        background: #96734e;
+        color: white;
+        padding: 35px 15px;
+      }
+
+      #isiUndangan {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 35px;
+        }
+
+        .names {
+          font-size: 25px;
+        }
+
+        .gallery img {
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HALAMAN PEMBUKA -->
+    <div class="hero" id="cover">
+      <p>The Wedding Of</p>
+      <h1>Arina & Bagas</h1>
+      <p>Rabu, 30 Desember 2026</p>
+      <p>Kepada Yth. Tamu Undangan</p>
+
+      <button onclick="bukaUndangan()">Buka Undangan</button>
+    </div>
+
+    <div id="isiUndangan">
+      <!-- PEMBUKA -->
+      <section>
+        <p>Bismillahirrahmanirrahim</p>
+        <h2>Assalamu'alaikum Wr. Wb.</h2>
+
+        <p>Dengan memohon, kami bermaksud menyelenggarakan pernikahan kami.</p>
+
+        <div class="names">
+          AFRIL Febriana
+          <br />& <br />Bagas Sadewa
+        </div>
+      </section>
+
+      <!-- COUNTDOWN -->
+      <section>
+        <h2>Menuju Hari Bahagia</h2>
+
+        <div class="countdown">
+          <div><strong id="hari">0</strong>Hari</div>
+          <div><strong id="jam">0</strong>Jam</div>
+          <div><strong id="menit">0</strong>Menit</div>
+          <div><strong id="detik">0</strong>Detik</div>
+        </div>
+      </section>
+
+      <!-- PROFIL MEMPELAI -->
+      <section>
+        <h2>Mempelai</h2>
+
+        <div class="card">
+          <h2>FRIL Febriana</h2>
+          <p>Putri pertama Bapak Sumarni & Ibu Maryati</p>
+        </div>
+
+        <h2>&</h2>
+
+        <div class="card">
+          <h2>Bagas Sadewa</h2>
+          <p>Putra kedua Bapak Samuel & Ibu Masuya</p>
+        </div>
+      </section>
+
+      <!-- ACARA -->
+      <section>
+        <h2>Waktu & Tempat</h2>
+
+        <div class="card">
+          <h2>PEMBERKATAN</h2>
+          <p>Rabu, 30 Desember 2026</p>
+          <p>08.00 - 10.00 WIB</p>
+        </div>
+
+        <div class="card">
+          <h2>Resepsi</h2>
+          <p>Kamis, 31 Desember 2026</p>
+          <p>10.00 - 14.00 WIB</p>
+          <br />
+          <p><b>Lembor selatan</b></p>
+          <p>Lembor selatan</p>
+
+          <button
+            onclick="
+              window.open(
+                'https://www.google.com/maps/place/KAMPUNG+AMBA/@-8.7018426,120.0107217,11z/data=!4m15!1m8!3m7!1s0x2db49cd977499f25:0xd449d3835f0762cf!2sKecamatan+Lembor,+Kabupaten+Manggarai+Barat,+Nusa+Tenggara+Tim.!3b1!8m2!3d-8.7081253!4d120.1677018!16s%2Fg%2F1216fqvj!3m5!1s0x2db3638fece7afc1:0xb03cec3a397388b7!8m2!3d-8.738696!4d120.190346!16s%2Fg%2F11g192r_kt?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D',
+              )
+            "
+          >
+            Lihat Lokasi
+          </button>
+        </div>
+      </section>
+
+      <!-- LOVE STORY -->
+      <section>
+        <h2>Kisah Cinta</h2>
+
+        <div class="card">
+          <h3>Pertemuan Pertama</h3>
+          <p>
+            Kisah ini berawal ketika kami bertemu untuk pertama kalinya di
+            kampus.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Lamaran</h3>
+          <p>
+            Dengan niat yang tulus, kami memutuskan untuk melangkah ke jenjang
+            pernikahan.
+          </p>
+        </div>
+      </section>
+
+      <!-- GALERI -->
+      <section>
+        <h2>Galeri Foto</h2>
+
+        <div class="gallery">
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600"
+            alt="Foto pernikahan 1"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=600"
+            alt="Foto pernikahan 2"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600"
+            alt="Foto pernikahan 3"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=600"
+            alt="Foto pernikahan 4"
+          />
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section>
+        <h2>Konfirmasi Kehadiran</h2>
+
+        <div class="card">
+          <form onsubmit="kirimRSVP(event)">
+            <input type="text" id="nama" placeholder="Nama Anda" required />
+
+            <select id="status">
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+
+            <input
+              type="number"
+              id="jumlah"
+              placeholder="Jumlah Tamu"
+              min="1"
+              value="1"
+            />
+
+            <button type="submit">Kirim Konfirmasi</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- UCAPAN -->
+      <section>
+        <h2>Ucapan & Doa</h2>
+
+        <div class="card">
+          <input type="text" id="pengirim" placeholder="Nama Anda" />
+
+          <textarea
+            id="pesan"
+            placeholder="Tuliskan ucapan dan doa..."
+          ></textarea>
+
+          <button onclick="kirimUcapan()">Kirim Ucapan</button>
+
+          <div id="daftarUcapan"></div>
+        </div>
+      </section>
+
+      <!-- HADIAH -->
+      <section>
+        <h2>Kirim Hadiah</h2>
+
+        <div class="card">
+          <p>Bank BCA</p>
+          <h3>Ajeng</h3>
+          <h3>123456</h3>
+
+          <button onclick="salinRekening()">Salin Nomor Rekening</button>
+        </div>
+      </section>
+
+      <!-- PENUTUP -->
+      <footer>
+        <h2>Terima Kasih</h2>
+        <p>Merupakan kebahagiaan bagi kami atas kehadiran Anda.</p>
+        <br />
+        <h3>Arina & Bagas</h3>
+      </footer>
+    </div>
+
+    <script>
+      // MEMBUKA UNDANGAN
+      function bukaUndangan() {
+        document.getElementById("cover").style.display = "none";
+        document.getElementById("isiUndangan").style.display = "block";
+        window.scrollTo(0, 0);
+      }
+
+      // COUNTDOWN
+      const tanggalNikah = new Date("Dec 30, 2026 08:00:00").getTime();
+
+      setInterval(function () {
+        const sekarang = new Date().getTime();
+        const selisih = tanggalNikah - sekarang;
+
+        if (selisih <= 0) {
+          document.getElementById("hari").innerText = 0;
+          document.getElementById("jam").innerText = 0;
+          document.getElementById("menit").innerText = 0;
+          document.getElementById("detik").innerText = 0;
+          return;
+        }
+
+        document.getElementById("hari").innerText = Math.floor(
+          selisih / (1000 * 60 * 60 * 24),
+        );
+
+        document.getElementById("jam").innerText = Math.floor(
+          (selisih / (1000 * 60 * 60)) % 24,
+        );
+
+        document.getElementById("menit").innerText = Math.floor(
+          (selisih / (1000 * 60)) % 60,
+        );
+
+        document.getElementById("detik").innerText = Math.floor(
+          (selisih / 1000) % 60,
+        );
+      }, 1000);
+
+      // RSVP DEMO
+      function kirimRSVP(event) {
+        event.preventDefault();
+
+        const nama = document.getElementById("nama").value;
+        const status = document.getElementById("status").value;
+
+        alert("Terima kasih " + nama + ". Konfirmasi Anda: " + status);
+      }
+
+      // UCAPAN DEMO
+      function kirimUcapan() {
+        const nama = document.getElementById("pengirim").value;
+        const pesan = document.getElementById("pesan").value;
+
+        if (!nama || !pesan) {
+          alert("Isi nama dan ucapan terlebih dahulu!");
+          return;
+        }
+
+        const ucapan = document.createElement("p");
+        ucapan.innerHTML =
+          "<b>" +
+          document.createTextNode(nama).textContent +
+          "</b>: " +
+          document.createTextNode(pesan).textContent;
+
+        document.getElementById("daftarUcapan").appendChild(ucapan);
+
+        document.getElementById("pengirim").value = "";
+        document.getElementById("pesan").value = "";
+      }
+
+      // SALIN REKENING
+      function salinRekening() {
+        navigator.clipboard.writeText("123456");
+        alert("Nomor rekening berhasil disalin!");
+      }
+    </script>
+  </body>
+</html>
